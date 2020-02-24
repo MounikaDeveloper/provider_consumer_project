@@ -1,0 +1,22 @@
+{% include 'header.html' %}
+<body style="background-color:navajowhite;color: mediumseagreen">
+<br><br>
+    <form action="{% url 'validate' %}" method="post">
+        {% csrf_token %}
+        <h3 style="margin-left: 40%;">Admin Login</h3>
+        <table align="center" width="400" height="150">
+
+            <tr>
+                <th>Username:</th>
+                <th><input type="text" name="uname" required></th>
+            </tr>
+            <tr>
+                <th>Password:</th>
+                <th><input type="password" name="pwd" required> </th>
+            </tr>
+
+        </table>
+        <button style="margin-left: 45%" type="submit">Login</button>
+    </form><br>
+  <h3 align="center" style="color:red;">{{ msg }}</h3>
+</body>

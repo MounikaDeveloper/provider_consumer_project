@@ -1,0 +1,28 @@
+{% include 'merchantheader.html' %}
+{#{% include 'navigation.html' %}#}
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <h3 style="margin-left: 45%">Merchant Login</h3>
+    <table align="center" cellpadding="20%">
+        <tr>
+            <th>
+                Username:
+            </th>
+            <th>
+                <input type="email" name="uname" required>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Password:
+            </th>
+            <th>
+                <input type="password" name="pwd" required>
+            </th>
+        </tr>
+    </table>
+    <button type="submit" style="margin-left: 45%;">Login</button><br><br>
+    <a href="{% url 'change' %}" style="margin-left: 45%;">Change Password</a>
+
+</form>
+<h3 align="center" style="margin-left: 30%;color: red">{{ msg }}</h3>

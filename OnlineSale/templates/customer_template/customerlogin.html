@@ -1,0 +1,26 @@
+{% include 'header.html' %}
+<form action="{% url 'clogin' %}" method="post">
+    {% csrf_token %}
+<br>
+    <h1 align="center">Customer Login</h1>
+<table align="center" cellpadding="20%">
+    <tr>
+        <th>
+            Contact Number:
+        </th>
+        <th>
+            <input type="number"  name="cno" required>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            Password:
+        </th>
+        <th>
+            <input type="password"  name="pwd" required>
+        </th>
+    </tr>
+
+</table>
+<button  style="margin-left: 45%" type="submit" >Login</button>
+    </form>

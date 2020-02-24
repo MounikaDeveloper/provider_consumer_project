@@ -1,0 +1,32 @@
+{% include 'merchantheader.html' %}
+{% include 'navigation1.html' %}
+{% if data %}
+<div>
+    <br>
+    <h5 style="margin-left: 40%;color: green">{{ msg }}</h5>
+    <h3 style="margin-left: 40%">VIEW PRODUCTS</h3><BR>
+    <table align="center" border="1">
+        <tr>
+            <th>NO</th>
+            <th>NAME</th>
+            <th>PRICE</th>
+            <th>QUANTITY</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
+        </tr>
+        {% for x in data %}
+        <tr>
+                <th>{{ x.pk}}</th>
+                <th>{{ x.fields.name}}</th>
+                <th>{{ x.fields.price }}</th>
+                <th>{{ x.fields.quantity }}</th>
+                <th><a href="{% url 'updateproduct' %}?pid={{ x.pk }}">YES</a></th>
+                <th><a href="{% url 'deleteproduct' %}?pid={{ x.pk }}">YES</a></th>
+
+        </tr>
+         {% endfor %}
+    </table>
+</div>
+    {% else %}
+  <br><br><br>  <h3 align="center">No Records found</h3>
+{% endif %}

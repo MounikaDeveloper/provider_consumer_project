@@ -1,0 +1,13 @@
+{% include 'header.html' %}
+<table align="center"  cellpadding="40%">
+    <tr>
+        <th>
+            <a href="{% url 'customerlogin' %}">Login</a><br>
+        </th>
+        <th>
+
+        <a href="{% url 'customerreg' %}">Register</a>
+        </th>
+    </tr>
+</table><br><br>
+<h1 align="center">{{ msg }}</h1>

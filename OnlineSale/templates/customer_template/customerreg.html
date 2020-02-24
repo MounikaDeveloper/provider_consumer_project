@@ -1,0 +1,49 @@
+{% include 'header.html' %}
+<br>
+<h1 align="center">Customer Registration</h1><br>
+<form action="{% url 'creg' %}" method="post">
+    {% csrf_token %}
+<table align="center">
+    <tr>
+        <th>
+            Name:
+        </th>
+        <th>
+            <input type="text" name="name" required>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            Contact:
+        </th>
+        <th>
+            <input type="number" name="cno" required>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            Address:
+        </th>
+        <th>
+            <textarea rows="3" cols="22" name="address" required></textarea>
+        </th>
+    </tr>
+     <tr>
+        <th>
+            Email:
+        </th>
+        <th>
+            <input type="email" name="email" required>
+        </th>
+    </tr>
+     <tr>
+        <th>
+            Password:
+        </th>
+        <th>
+            <input type="password" name="pwd" required>
+        </th>
+    </tr>
+</table><br>
+    <button type="submit" style="margin-left: 45%">Register</button>
+</form>

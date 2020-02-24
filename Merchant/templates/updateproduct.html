@@ -1,0 +1,39 @@
+{% include 'merchantheader.html' %}
+{% include 'navigation1.html' %}
+<div>
+    <br>
+    <h5 style="margin-left: 40%;color: green">{{ msg }}</h5>
+    <h3 style="margin-left: 40%">UPDATE PRODUCT</h3><BR>
+    <form  action="{% url 'upd_prod' %}" method="post">
+        {% csrf_token %}
+
+    <table align="center" border="0">
+        {% for x in data %}
+        <tr>
+            <th>NO:</th>
+            <th>
+                <input type="number" name="no" value="{{ x.pk}}" readonly>
+            </th>
+        </tr>
+            <tr>
+            <th>NAME:</th>
+            <th><input type="text" name="name" value="{{ x.fields.name }}"></th>
+            </tr>
+            <tr>
+            <th>PRICE:</th>
+            <TH>
+                <input type="number" name="price" value="{{ x.fields.price }}">
+            </TH>
+            </tr>
+            <tr>
+            <th>QUANTITY:</th>
+            <TH>
+                <input type="number" name="quantity" value="{{ x.fields.quantity}}">
+            </TH>
+            </tr>
+
+        {% endfor %}
+    </table><br>
+     <button type="submit" style="margin-left: 45%">Update</button>
+     </form>
+</div>

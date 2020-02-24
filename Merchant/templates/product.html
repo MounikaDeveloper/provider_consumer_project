@@ -1,0 +1,11 @@
+{% include 'merchantheader.html' %}
+{% include 'navigation1.html' %}
+<div>
+    <br><br><br><br><br>
+    <h5 style="margin-left: 40%;color: green">{{ msg }}</h5>
+    {% for x in Data %}
+    <input type="number" value="{{ x.pk }}" name="mid" hidden>
+    {% endfor %}
+
+</div>
+<br>

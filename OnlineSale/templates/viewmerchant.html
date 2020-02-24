@@ -1,0 +1,43 @@
+{% include 'header.html' %}
+{% include 'navigation.html' %}
+<div class="container-fluid" >
+  <div class="row content">
+    <div class="col-sm-3 sidenav" style="background-color:darkkhaki;color: mistyrose" >
+        <div>
+      <br><br><br>
+        <h3><a href="{% url 'addmerchant'%}"> Add Merchant</a></h3><br><br>
+        <h3><a href="{% url 'viewmerchant'%}"> View Merchant</a></h3><br><br>
+        <h3><a href="{% url 'deletemerchant'%}"> Delete Merchant</a></h3><br><br><br>
+            </div>
+    </div>
+      <div class="col-sm-9" style="background-color: mistyrose">
+
+            <br><br>
+
+              <table cellpadding="20%" align="center" border="1" style="margin-top: 0%">
+                  <tr>
+                      <th>ID</th>
+                      <th>NAME</th>
+                      <th>CONTACT</th>
+                      <th>EMAIL</th>
+                      <th>DELETE</th>
+                  </tr>
+                   {% for x in data %}
+                  <tr>
+
+                          <th>{{ x.id }}</th>
+                          <th>{{ x.name }}</th>
+                          <th>{{ x.contactno }}</th>
+                          <th>{{ x.emailid }}</th>
+                       <th>
+                       <a href="{% url 'delmerc' %}"{{ x.id }}>Yes</a>
+                       </th>
+                      {% endfor %}
+                  </tr>
+              </table>
+
+      <h3 align="center" style="margin-left: 20%;color: green">{{ msg }}</h3>
+
+      </div>
+  </div>
+</div>

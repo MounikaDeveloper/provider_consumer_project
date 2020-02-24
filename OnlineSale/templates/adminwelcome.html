@@ -1,0 +1,17 @@
+{% include 'header.html' %}
+{% include 'navigation.html' %}
+<div class="container-fluid" >
+  <div class="row content">
+    <div class="col-sm-3 sidenav" style="background-color:darkkhaki;color: mistyrose" >
+        <div>
+      <br><br><br>
+        <h3><a href="{% url 'addmerchant'%}"> Add Merchant</a></h3><br><br>
+        <h3><a href="{% url 'viewmerchant'%}"> View Merchant</a></h3><br><br>
+        <h3><a href="{% url 'deletemerchant'%}"> Delete Merchant</a></h3><br><br><br>
+            </div>
+    </div>
+      <div class="col-sm-9" style="background-color: mistyrose">
+          <h1 style="margin-top: 20%" align="center">{{ msg }}</h1>
+      </div>
+  </div>
+</div>
